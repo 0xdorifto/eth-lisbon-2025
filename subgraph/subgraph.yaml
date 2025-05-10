@@ -1,13 +1,12 @@
 specVersion: 1.2.0
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum/contract
     name: BoldToken
     source:
       abi: BoldToken
-      address: "0xb01dd87b29d187f3e3a4bf6cdaebfb97f3d9ab98"
-      startBlock: 21640111
+      address: "0x6bf08b922d7325c4874e519fbbbd56838e34d557"
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.9
@@ -17,28 +16,27 @@ dataSources:
         - CollateralAddresses
       abis:
         - name: BorrowerOperations
-          file: ../contracts/out/BorrowerOperations.sol/BorrowerOperations.json
+          file: BoldToken/BorrowerOperations.json
         - name: BoldToken
-          file: ../contracts/out/BoldToken.sol/BoldToken.json
+          file: BoldToken/BoldToken.json
         - name: CollateralRegistry
-          file: ../contracts/out/CollateralRegistry.sol/CollateralRegistry.json
+          file: BoldToken/CollateralRegistry.json
         - name: ERC20
-          file: ../contracts/out/ERC20.sol/ERC20.json
+          file: BoldToken/ERC20.json
         - name: TroveManager
-          file: ../contracts/out/TroveManager.sol/TroveManager.json
+          file: BoldToken/TroveManager.json
         - name: TroveNFT
-          file: ../contracts/out/TroveNFT.sol/TroveNFT.json
+          file: BoldToken/TroveNFT.json
       eventHandlers:
         - event: CollateralRegistryAddressChanged(address)
           handler: handleCollateralRegistryAddressChanged
-      file: ./src/BoldToken.mapping.ts
-    network: mainnet
+      file: BoldToken/BoldToken.wasm
+    network: rise-sepolia
   - kind: ethereum/contract
     name: Governance
     source:
       abi: Governance
-      address: "0x636deb767cd7d0f15ca4ab8ea9a9b26e98b426ac"
-      startBlock: 21640111
+      address: "0x79fdb65c20e75f8961d54f6714d2fcc4c30d1073"
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.9
@@ -49,31 +47,30 @@ dataSources:
         - GovernanceUser
       abis:
         - name: Governance
-          file: ../contracts/out/Governance.sol/Governance.json
+          file: Governance/Governance.json
       eventHandlers:
         - event: AllocateLQTY(indexed address,indexed address,int256,int256,uint256,uint8)
           handler: handleAllocateLQTY
-        - event: DepositLQTY(indexed
-            address,address,uint256,uint256,uint256,uint256,uint256)
+        - event: DepositLQTY(indexed address,address,uint256,uint256,uint256,uint256,uint256)
           handler: handleDepositLQTY
         - event: RegisterInitiative(address,address,uint256,uint8)
           handler: handleRegisterInitiative
         - event: WithdrawLQTY(indexed
             address,address,uint256,uint256,uint256,uint256,uint256,uint256)
           handler: handleWithdrawLQTY
-      file: ./src/Governance.mapping.ts
-    network: mainnet
+      file: Governance/Governance.wasm
+    network: rise-sepolia
 templates:
   - name: TroveManager
     kind: ethereum/contract
-    network: mainnet
+    network: rise-sepolia
     source:
       abi: TroveManager
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.9
       language: wasm/assemblyscript
-      file: ./src/TroveManager.mapping.ts
+      file: templates/TroveManager/TroveManager.wasm
       entities:
         - Trove
         - InterestRateBracket
@@ -82,33 +79,31 @@ templates:
         - Collateral
       abis:
         - name: TroveManager
-          file: ../contracts/out/TroveManager.sol/TroveManager.json
+          file: TroveManager/TroveManager.json
         - name: TroveNFT
-          file: ../contracts/out/TroveNFT.sol/TroveNFT.json
+          file: TroveManager/TroveNFT.json
       eventHandlers:
-        - event: TroveOperation(indexed
-            uint256,uint8,uint256,uint256,uint256,int256,uint256,int256)
+        - event: TroveOperation(indexed uint256,uint8,uint256,uint256,uint256,int256,uint256,int256)
           handler: handleTroveOperation
           receipt: true
-        - event: BatchUpdated(indexed
-            address,uint8,uint256,uint256,uint256,uint256,uint256,uint256)
+        - event: BatchUpdated(indexed address,uint8,uint256,uint256,uint256,uint256,uint256,uint256)
           handler: handleBatchUpdated
   - name: TroveNFT
     kind: ethereum/contract
-    network: mainnet
+    network: rise-sepolia
     source:
       abi: TroveNFT
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.9
       language: wasm/assemblyscript
-      file: ./src/TroveNFT.mapping.ts
+      file: templates/TroveNFT/TroveNFT.wasm
       entities:
         - BorrowerInfo
         - Trove
       abis:
         - name: TroveNFT
-          file: ../contracts/out/TroveNFT.sol/TroveNFT.json
+          file: TroveNFT/TroveNFT.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer

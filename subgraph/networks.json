@@ -26,5 +26,13 @@
       "address": "0xf03ee2696e6b04cbe37978a9a32aea0b05d2f7a9",
       "startBlock": 8008265
     }
+  },
+  "rise": {
+    "BoldToken": {
+      "address": "0x6bf08b922d7325c4874e519fbbbd56838e34d557",
+    },
+    "Governance": {
+      "address": "0x3f18eabf2febf68405e8edf1119d826b3b02b07c",
+    }
   }
 }

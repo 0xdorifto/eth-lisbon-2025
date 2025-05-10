@@ -17,6 +17,7 @@ Arguments:
                   - sepolia: Deploy to Ethereum Sepolia
                   - mainnet: Deploy to the Ethereum mainnet (not implemented)
                   - liquity-testnet: Deploy to the Liquity v2 testnet (not implemented)
+                  - rise: Deploy to Rise testnet
 
 
 Options:
@@ -85,6 +86,11 @@ export async function main() {
   if (networkPreset === "mainnet") {
     options.name ??= "liquity2-mainnet";
     options.network ??= "mainnet";
+  }
+
+  if (networkPreset === "rise") {
+    options.name ??= "liquity2-rise";
+    options.network ??= "RISE";
   }
 
   if (!options.name) {

@@ -38,5 +38,4 @@ module.exports = {
       initialBaseFeePerGas: 0,
       allowUnlimitedContractSize: true,
     },
-  },
 };

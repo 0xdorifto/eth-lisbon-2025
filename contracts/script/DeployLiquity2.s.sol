@@ -297,8 +297,8 @@ contract DeployLiquity2Script is DeployGovernance, UniPriceConverter, StdCheats,
             stakingV1 = LQTY_STAKING_ADDRESS;
             lusd = LUSD_ADDRESS;
         } else {
-            // sepolia, local
-            if (block.chainid == 31337) {
+            // sepolia, local, rise
+            if (block.chainid == 31337 || block.chainid == 11155931) {
                 // local
                 WETH = new WETHTester({_tapAmount: 100 ether, _tapPeriod: 1 days});
             } else {
@@ -825,8 +825,8 @@ contract DeployLiquity2Script is DeployGovernance, UniPriceConverter, StdCheats,
         internal
         returns (ICurveStableswapNGPool)
     {
-        if (block.chainid == 31337) {
-            // local
+        if (block.chainid == 31337 || block.chainid == 11155931) {
+            // local, rise
             return ICurveStableswapNGPool(address(0));
         }
 

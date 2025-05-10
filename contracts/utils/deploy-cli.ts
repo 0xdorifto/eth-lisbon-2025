@@ -14,6 +14,7 @@ Arguments:
                   - local: Deploy to a local network
                   - mainnet: Deploy to the Ethereum mainnet
                   - liquity-testnet: Deploy to the Liquity v2 testnet
+                  - rise: Deploy to RISE testnet
 
 
 Options:
@@ -96,6 +97,14 @@ export async function main() {
   if (options.help) {
     echo`${HELP}`;
     process.exit(0);
+  }
+
+  // network preset: rise
+  if (networkPreset === "rise") {
+    options.chainId ??= 11155931;
+    options.rpcUrl ??= "https://testnet.riselabs.xyz/";
+    options.verifier??= "blockscout";
+    options.verifierUrl ??= "https://explorer.testnet.riselabs.xyz/api/";
   }
 
   // network preset: local
