@@ -8,7 +8,7 @@ import { Amount } from "@/src/comps/Amount/Amount";
 import { Field } from "@/src/comps/Field/Field";
 import { InterestRateField } from "@/src/comps/InterestRateField/InterestRateField";
 import { LeverageField, useLeverageField } from "@/src/comps/LeverageField/LeverageField";
-import { RedemptionInfo } from "@/src/comps/RedemptionInfo/RedemptionInfo";
+// import { RedemptionInfo } from "@/src/comps/RedemptionInfo/RedemptionInfo";
 import { Screen } from "@/src/comps/Screen/Screen";
 import { ETH_MAX_RESERVE, LEVERAGE_MAX_SLIPPAGE, MAX_COLLATERAL_DEPOSITS, MIN_DEBT } from "@/src/constants";
 import content from "@/src/content";
@@ -325,7 +325,7 @@ export function LeverageScreen() {
           }}
         />
 
-        <RedemptionInfo />
+        {/* <RedemptionInfo /> */}
 
         <div
           className={css({

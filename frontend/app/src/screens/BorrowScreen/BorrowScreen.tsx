@@ -7,7 +7,7 @@ import { NBSP } from "@/src/characters";
 import { Field } from "@/src/comps/Field/Field";
 import { FlowButton } from "@/src/comps/FlowButton/FlowButton";
 import { InterestRateField } from "@/src/comps/InterestRateField/InterestRateField";
-import { RedemptionInfo } from "@/src/comps/RedemptionInfo/RedemptionInfo";
+// import { RedemptionInfo } from "@/src/comps/RedemptionInfo/RedemptionInfo";
 import { Screen } from "@/src/comps/Screen/Screen";
 import { DEBT_SUGGESTIONS, ETH_MAX_RESERVE, MAX_COLLATERAL_DEPOSITS, MIN_DEBT } from "@/src/constants";
 import content from "@/src/content";
@@ -396,7 +396,7 @@ export function BorrowScreen() {
         }}
       />
 
-      <RedemptionInfo />
+      {/* <RedemptionInfo /> */}
 
       <FlowButton
         disabled={!allowSubmit}

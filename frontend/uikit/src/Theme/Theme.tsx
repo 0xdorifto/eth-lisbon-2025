@@ -83,6 +83,9 @@ export const colors = {
   // White
   "white": "#FFFFFF",
 
+  //Black
+  "black": "#000000",
+
   // Brand colors
   "brand:blue": "#405AE5",
   "brand:lightBlue": "#6D8AED",
@@ -204,6 +207,8 @@ export const lightTheme = {
     brandCyan: "brand:cyan",
     brandCoral: "brand:coral",
     brandBrown: "brand:brown",
+
+    black: "black"
   } satisfies Record<string, (keyof typeof colors) | `#${string}`>,
 } as const;
 

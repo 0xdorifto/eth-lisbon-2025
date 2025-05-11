@@ -7,12 +7,12 @@ import { css } from "@/styled-system/css";
 
 export default {
   // Used in the top bar and other places
-  appName: "Liquity V2",
+  appName: "Stabilis",
   appDescription: `
-    Liquity V2 is a new borrowing protocol that lets users
-    deposit ETH or LSTs as collateral and mint the stablecoin BOLD.
+    Stabilis is a borrowing protocol that lets users
+    deposit assets on RISE as collateral and mint the stablecoin USDR.
   `,
-  appUrl: "https://www.liquity.org/",
+  appUrl: "https://www.stabilis.finance",
   appIcon: (
     typeof window === "undefined" ? "" : window.location.origin
   ) + "/favicon.svg",

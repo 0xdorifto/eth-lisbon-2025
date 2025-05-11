@@ -31,7 +31,7 @@ export function MenuItem({
         color: token(`colors.${selected ? "selected" : "interactive"}`),
       }}
     >
-      <div
+      {/* <div
         className={css({
           display: "grid",
           placeItems: "center",
@@ -40,7 +40,7 @@ export function MenuItem({
         })}
       >
         {icon}
-      </div>
+      </div> */}
       <div
         className={css({
           flexShrink: 1,

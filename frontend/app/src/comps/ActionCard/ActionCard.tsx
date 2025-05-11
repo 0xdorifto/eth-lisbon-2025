@@ -5,7 +5,7 @@ import { a, useSpring } from "@react-spring/web";
 import Link from "next/link";
 import { useState } from "react";
 import { match } from "ts-pattern";
-import { ActionIcon } from "./ActionIcon";
+// import { ActionIcon } from "./ActionIcon";
 
 export function ActionCard({
   type,
@@ -36,7 +36,7 @@ export function ActionCard({
   const { description, path, title, colors } = match(type)
     .with("borrow", () => ({
       colors: {
-        background: token("colors.brandDarkBlue"),
+        background: token("colors.black"),
         foreground: token("colors.brandDarkBlueContent"),
         foregroundAlt: token("colors.brandDarkBlueContentAlt"),
       },
@@ -56,7 +56,7 @@ export function ActionCard({
     }))
     .with("earn", () => ({
       colors: {
-        background: token("colors.brandBlue"),
+        background: token("colors.black"),
         foreground: token("colors.brandBlueContent"),
         foregroundAlt: token("colors.brandBlueContentAlt"),
       },
@@ -66,9 +66,9 @@ export function ActionCard({
     }))
     .with("stake", () => ({
       colors: {
-        background: token("colors.brandGolden"),
-        foreground: token("colors.brandGoldenContent"),
-        foregroundAlt: token("colors.brandGoldenContentAlt"),
+        background: token("colors.black"),
+        foreground: token("white"),
+        foregroundAlt: token("white"),
       },
       description: ac.stake.description,
       path: "/stake",
@@ -136,11 +136,11 @@ export function ActionCard({
             inset: "20px 24px auto auto",
           })}
         >
-          <ActionIcon
+          {/* <ActionIcon
             colors={colors}
             iconType={type}
             state={hint ? "active" : "idle"}
-          />
+          /> */}
         </div>
       </a.section>
     </Link>

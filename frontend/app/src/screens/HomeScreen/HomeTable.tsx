@@ -62,7 +62,7 @@ export function HomeTable<Cols extends readonly ReactNode[]>({
           >
             {title}
           </span>
-          <span
+          {/* <span
             className={css({
               transformOrigin: "50% 50%",
               transform: {
@@ -72,7 +72,7 @@ export function HomeTable<Cols extends readonly ReactNode[]>({
             })}
           >
             {icon}
-          </span>
+          </span> */}
         </h1>
         <div
           className={css({

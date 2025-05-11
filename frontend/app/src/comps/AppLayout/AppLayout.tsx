@@ -6,7 +6,7 @@ import { Banner } from "@/Banner";
 import { LegacyPositionsBanner } from "@/src/comps/LegacyPositionsBanner/LegacyPositionsBanner";
 import { LEGACY_CHECK } from "@/src/env";
 import { css } from "@/styled-system/css";
-import { BottomBar } from "./BottomBar";
+// import { BottomBar } from "./BottomBar";
 import { TopBar } from "./TopBar";
 
 export const LAYOUT_WIDTH = 1092;
@@ -75,7 +75,7 @@ export function AppLayout({
         >
           {children}
         </div>
-        <BottomBar />
+        {/* <BottomBar /> */}
       </div>
     </div>
   );
